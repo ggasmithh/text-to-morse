@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 /*
 https://en.wikipedia.org/wiki/Morse_code#Representation,_timing,_and_speeds
 Let 1 unit = 120 milliseconds
@@ -25,46 +24,46 @@ void dit() {
 void dah() {
 	Beep(440, 360);
 }
-//
 
 //CONVERSION FUNCTIONS
 void letter(char letter) {
 
 	//char is the letter, int is a 4-digit integer that tells us when to dit or dah
-	map<char, string> codex;
+	map<char, string> codex = {
 
 	/*
 	0	-	silence
 	1	-	dit
 	2	-	dah
-
 	*/
-	codex['a'] = "1200";
-	codex['b'] = "2111";
-	codex['c'] = "2121";
-	codex['d'] = "2110";
-	codex['e'] = "1000";
-	codex['f'] = "1121";
-	codex['g'] = "2210";
-	codex['h'] = "1111";
-	codex['i'] = "1100";
-	codex['j'] = "1222";
-	codex['k'] = "2120";
-	codex['l'] = "1211";
-	codex['m'] = "2200";
-	codex['n'] = "2100";
-	codex['o'] = "2220";
-	codex['p'] = "1221";
-	codex['q'] = "2212";
-	codex['r'] = "1210";
-	codex['s'] = "1110";
-	codex['t'] = "2000";
-	codex['u'] = "1120";
-	codex['v'] = "1112";
-	codex['w'] = "1220";
-	codex['x'] = "2112";
-	codex['y'] = "2122";
-	codex['z'] = "2211";
+
+	{'a',"1200"},
+	{'b',"2111"},
+	{'c',"2121"},
+	{'d',"2110"},
+	{'e',"1000"},
+	{'f',"1121"},
+	{'g',"2210"},
+	{'h',"1111"},
+	{'i',"1100"},
+	{'j',"1222"},
+	{'k',"2120"},
+	{'l',"1211"},
+	{'m',"2200"},
+	{'n',"2100"},
+	{'o',"2220"},
+	{'p',"1221"},
+	{'q',"2212"},
+	{'r',"1210"},
+	{'s',"1110"},
+	{'t',"2000"},
+	{'u',"1120"},
+	{'v',"1112"},
+	{'w',"1220"},
+	{'x',"2112"},
+	{'y',"2122"},
+	{'z',"2211"}
+}
 
 	string number = codex[letter];
 	for (int i = 0; i < 4; i++) {
@@ -99,14 +98,9 @@ void sentence(string user_input) {
 		}
 	}
 }
-//
-
-
 
 //https://msdn.microsoft.com/en-us/library/windows/desktop/ms679277(v=vs.85).aspx
 int main() {
-
-
 	//this is our main loop
 	string line;
 
@@ -117,8 +111,5 @@ int main() {
 
 	}
 
-
-
 	return 0;
 }
-
